@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: "Hulu"
+  role: "Senior Developer"
+  description: "Lorem ipsum"
+  job_post: "Glassdoor"
+  recruiter: "NA"
+  notes: "Really want"
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+
+two:
+  company: "Google"
+  role: "Genius Internship"
+  description: "Lorem ipsum"
+  job_post: MyText
+  recruiter: MyText
+  notes: MyText
+  created_at: <%= 3.years.ago %>
+  user: michael
+
+three:
+  company: "Netflix"
+  role: "Superstar Software Engineer"
+  description: "Lorem ipsum"
+  job_post: "Indeed"
+  recruiter: "Ann Nugen"
+  notes: "Not too far from my house!"
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+most_recent:
+  company: "Riot Games"
+  role: "Unity Developer"
+  description: "Lorem ipsum"
+  job_post: "See Recruiter"
+  recruiter: "Hank Henshaw"
+  notes: "Brush up on unity development..."
+  created_at: <%= Time.zone.now %>
+  user: michael
+
+<% 30.times do |n| %>
+jobsearch_<%= n %>:
+  company: <%= Faker::Company.name %>
+  role: <%= Faker::Name.title %>
+  description: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: michael
+<% end %>
+

@@ -1,0 +1,9 @@
+<li id="jobsearch-<%= jobsearch.id %>">
+	<%= link_to gravatar_for(jobsearch.user, size: 50), jobsearch.user %>
+	<span class="user"><%= link_to jobsearch.user.name, jobsearch.user %></span>
+	<span class="company"><%= link_to jobsearch.company %></span>
+	<span class="role"><%= link_to jobsearch.role %></span>
+	<span class="timestamp">
+		Posted <%= time_ago_in_words(jobsearch.created_at)%> ago. 
+	</span>
+</li>

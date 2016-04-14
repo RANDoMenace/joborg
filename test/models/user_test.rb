@@ -68,4 +68,17 @@ class UserTest < ActiveSupport::TestCase
   test "authenticated? should return flase for a user with nil digest" do
   	assert_not @user.authenticated?(:remember, '')
   end
+
+  test "associated jobsearches should be destroyed" do
+    @user.save
+    @user.jobsearches.create!(company: "Hulu", 
+                         role: "Ruby Developer",
+                         description: "5+ year experienced Roby on Rails developer needed ASAP.",
+                         job_post: "Glassdoor.com",
+                         recruiter: "NA",
+                         notes: "Really want this!!!")
+    assert_difference 'Jobsearch.count', -1 do
+      @user.destroy
+    end
+  end
 end

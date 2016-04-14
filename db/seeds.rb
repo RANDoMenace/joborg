@@ -17,3 +17,13 @@ User.create!(name: "Example User",
 				 activated: true,
 				 activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+	company = Faker::Company.name
+	role = Faker::Name.title
+	description = Faker::Lorem.sentence(5)
+	users.each { |user| user.jobsearches.create!(company: company, 
+												 role: role,
+												 description: description) }
+end
