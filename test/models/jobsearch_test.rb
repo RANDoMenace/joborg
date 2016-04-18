@@ -4,7 +4,6 @@ class JobsearchTest < ActiveSupport::TestCase
   
   def setup
   	@user = users(:michael)
-  	# Not quite right.
   	@jobsearch = @user.jobsearches.build(company: "Hulu", 
   							   			 role: "Ruby Developer",
   							   			 description: "5+ year experienced Roby on Rails developer needed ASAP.",

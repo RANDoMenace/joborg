@@ -16,9 +16,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
   	assert_match @user.jobsearches.count.to_s, response.body
   	assert_select 'div.pagination'
   	# @user.jobsearches.paginate(page: 1).each do |jobsearch|
-  		# assert_match jobsearch.company, response.body
-  		# assert_match jobsearch.role, response.body
-  		# assert_match jobsearch.description, response.body
+  	# 	assert_match jobsearch.company, response.body
   	# end
   end
 end
