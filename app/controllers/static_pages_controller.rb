@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
-  	@jobsearch = current_user.jobsearches.build if logged_in?
+  	if logged_in?
+	  	@jobsearch = current_user.jobsearches.build 
+	  	@feed_items = current_user.feed.paginate(page: params[:page])
+  	end
   end
 
   def help
