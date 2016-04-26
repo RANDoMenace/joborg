@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'messages/new'
+
+  get 'messages/create'
+
   root                  'static_pages#home'
   get    'help'     =>  'static_pages#help'
   get    'about'    =>  'static_pages#about'
