@@ -4,16 +4,17 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
 			<p>If you have any questions, comments, or concerns.</p>
-			<form action="MAILTO:bgarza1016@gmail.com" method="post" enctype="text/plain">
+			<!-- <form action="MAILTO:bgarza1016@gmail.com" method="post" enctype="text/plain">
 			Name:<br>
 			<input type="text" name="name"><br>
 			E-mail:<br>
 			<input type="text" name="mail"><br>
 			Comment:<br>
 			<textarea name="comment"></textarea><br><br>
-			<input class="btn btn-primary" type="submit" value="Send"><br><br>
-			<input class="btn btn-primary" type="reset" value="Reset">
-			</form>
+			<input class="btn btn-primary btn-lg" type="submit" value="Send"><br><br>
+			<input class="btn btn-primary btn-lg" type="reset" value="Reset"> -->
+			<%= mail_to "bgarza1016@gmail.com", "Email me!", subject: "Joborg - question, comment, or concern." %>
+			<!-- </form> -->
 		</div>
 	</div>
 </div>
